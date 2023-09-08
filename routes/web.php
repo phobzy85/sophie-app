@@ -16,23 +16,5 @@ use App\Http\Controllers\GuitarsController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
-Route::get('/about', [HomeController::class, 'about'])->name('home.about');
-Route::get('/contact', [HomeController::class, 'contact'])->name('home.contact');
 
-Route::resource('guitars', GuitarsController::class);
-
-
-Route::get('store/{category?}/{item?}', function($category = null, $item = null)
-{
-	if(isset($category))
-	{
-		if(isset($item))
-		{
-			return "You are viewing the store for {$category} for {$item}";
-		}
-
-		return 'You are viewing the store for ' . strip_tags($category);
-	}
-
-	return 'You are viewing all instruments';
-});
+Route::resource('tasks', TasksController::class);

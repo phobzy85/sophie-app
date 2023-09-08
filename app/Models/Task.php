@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Guitar extends Model
+class Task extends Model
 {
     use HasFactory;
 
 	 protected $fillable = [
-		'name', 
-		'brand',
-		'year_made'
+		'type', 
+		'amount',
+		'info',
+		'date'
 	 ];
 }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class GuitarFormRequest extends FormRequest
+class TaskFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,10 @@ class GuitarFormRequest extends FormRequest
     public function rules(): array
     {
 		return [
-			'name' => 'required',
-			'brand' => 'required',
-			'year_made' => 'required'
+			'type' => 'required',
+			'amount' => '',
+			'info' => '',
+			'date' => 'required'
 		];
     }
 
@@ -32,9 +33,10 @@ class GuitarFormRequest extends FormRequest
 	 protected function prepareForValidation()
 	 {
 		$this->merge([
-			'name' => strip_tags($this->name),
-			'brand' => strip_tags($this->brand),
-			'year_made' => strip_tags($this->year_made),
+			'type' => strip_tags($this->type),
+			'amount' => strip_tags($this->amount),
+			'info' => strip_tags($this->info),
+			'date' => strip_tags($this->date),
 		]);
 	 }
 }
