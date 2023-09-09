@@ -23,7 +23,7 @@ class TaskFormRequest extends FormRequest
     {
 		return [
 			'type' => 'required',
-			'amount' => '',
+			'amount' => 'required',
 			'info' => '',
 			'date' => 'required'
 		];
